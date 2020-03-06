@@ -124,8 +124,8 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware
+        name: OpenWrt-X64
         path: ${{ env.FIRMWARE }}
         
-#    - name: WeChat notification
-#      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=x64设备编译成功
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=x64固件编译成功
