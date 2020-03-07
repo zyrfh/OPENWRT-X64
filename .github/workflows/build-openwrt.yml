@@ -78,6 +78,8 @@ jobs:
         git clone https://github.com/vernesong/OpenClash package/clash
         # serverchan
         git clone https://github.com/tty228/luci-app-serverchan package/serverchan
+        # koolproxyR
+        git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 
         
     - name: Update feeds
