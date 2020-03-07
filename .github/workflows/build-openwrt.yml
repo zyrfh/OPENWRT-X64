@@ -149,5 +149,5 @@ jobs:
    #     name: OpenWrt-X64
    #     path: ${{ env.FIRMWARE }}
         
-    - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=x64固件编译成功
+   # - name: WeChat notification
+   #   run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=x64固件编译成功
