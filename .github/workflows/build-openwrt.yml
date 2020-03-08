@@ -151,4 +151,4 @@ jobs:
    #     path: ${{ env.FIRMWARE }}
         
    # - name: WeChat notification
-   #   run: curl https://sc.ftqq.com/${{ secrets.SCU37507Ta41b7698571c496f951ead5bc2e4866f5e0173d251931 }}.send?text=x64固件编译成功
+   #   run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=x64固件编译成功
