@@ -39,10 +39,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     
-    - name: Set Date
-      run: |
-         date=$(date +%Y-%m-%d)
-         echo "::set-env name=DATE::$date"
+#     - name: Set Date
+#       run: |
+#          date=$(date +%Y-%m-%d)
+#          echo "::set-env name=DATE::$date"
 
     - name: Initialization environment
       env:
@@ -66,8 +66,8 @@ jobs:
       run: |
        cd openwrt
         # Smartdns
-        git clone https://github.com/simonsmh/openwrt-smartdns 
-        git clone https://github.com/simonsmh/luci-app-smartdns 
+        git clone https://github.com/simonsmh/openwrt-smartdns package/smartdns
+        git clone https://github.com/simonsmh/luci-app-smartdns package/luci-app-smartdns
 #         # adguardhome
 #         git clone https://github.com/rufengsuixing/luci-app-adguardhome package/adg
 #         # OpenAppFilter
