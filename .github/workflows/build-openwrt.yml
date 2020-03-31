@@ -62,12 +62,12 @@ jobs:
     - name: Add Lienol packages
       run: cd openwrt && echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default && cat feeds.conf.default
 
-#     - name: Download custom Packages
-#       run: |
-#         cd openwrt
-#         # Smartdns
-#         git clone https://github.com/simonsmh/openwrt-smartdns package/smartdns
-#         git clone https://github.com/simonsmh/luci-app-smartdns package/luci-app-smartdns
+    - name: Download custom Packages
+      run: |
+       cd openwrt
+        # Smartdns
+        git clone https://github.com/simonsmh/openwrt-smartdns 
+        git clone https://github.com/simonsmh/luci-app-smartdns 
 #         # adguardhome
 #         git clone https://github.com/rufengsuixing/luci-app-adguardhome package/adg
 #         # OpenAppFilter
