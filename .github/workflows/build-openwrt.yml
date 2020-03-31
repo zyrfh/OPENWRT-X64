@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt-ZYR
+name: Build OpenWrt X64
 
 on:
   release:
@@ -17,9 +17,9 @@ on:
     paths:
       - 'start'
   schedule:
-    - cron: 0 0 * * *
-#  watch:
-#    types: started
+      - cron: 0 0 * * *
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
