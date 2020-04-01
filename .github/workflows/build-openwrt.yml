@@ -10,7 +10,7 @@ name: Build OpenWrt X64
 
 on:
   schedule:
-      - cron: 0 20 * * *
+    - cron: 0 20 * * *
   watch:
     types: started
 
