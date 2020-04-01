@@ -9,15 +9,8 @@
 name: Build OpenWrt X64
 
 on:
-  release:
-    types: published
-  push:
-    branches:
-      - master
-    paths:
-      - 'start'
   schedule:
-      - cron: 0 0 * * *
+      - cron: 0 20 * * *
   watch:
     types: started
 
