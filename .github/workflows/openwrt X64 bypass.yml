@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt X64
+name: OpenWrt X64 bypass
 
 on:
   schedule:
@@ -17,7 +17,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: config/.config
+  CONFIG_FILE: config/bypass.config
   DIY_SH: diy.sh
   SSH_ACTIONS: false
 #  UPLOAD_BIN_DIR: false
