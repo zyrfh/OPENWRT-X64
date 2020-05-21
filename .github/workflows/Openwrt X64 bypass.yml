@@ -8,9 +8,9 @@
 
 name: OpenWrt X64 bypass
   
-on:
-#  schedule:
-#   - cron: 0 22 * * *
+# on:
+  schedule:
+  - cron: 0 22 * * *
 #   watch:
 #     types: started
 
