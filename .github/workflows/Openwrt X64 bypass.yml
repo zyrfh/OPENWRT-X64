@@ -9,10 +9,10 @@
 name: OpenWrt X64 bypass
   
 on:
-#  schedule:
-#  - cron: 0 22 * * *
-#    watch:
-#      types: started
+  schedule:
+   - cron: 0 22 * * *
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
