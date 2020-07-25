@@ -61,7 +61,7 @@ jobs:
         git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
         # luci-app-passwall
         # git clone https://github.com/esirplayground/Lienol-obsolete.git package/luci-app-passwall
-        git clone https://github.com/hyird/pw.git -b master package/luci-app-passwall
+        # git clone https://github.com/hyird/pw.git -b master package/luci-app-passwall
         # adguardhome
         svn checkout https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome package/luci-app-adg
 #         # smartdns
