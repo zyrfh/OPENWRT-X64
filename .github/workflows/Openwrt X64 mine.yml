@@ -130,4 +130,4 @@ jobs:
         path: openwrt/bin/targets
         
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=OpenWrt X64 mine 固件编译成功
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=X64固件编译成功
