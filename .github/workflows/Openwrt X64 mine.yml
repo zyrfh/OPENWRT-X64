@@ -3,16 +3,14 @@ name: OpenWrt X64 mine
 on:
   schedule:
     - cron: 0 22 * * *
-#  watch:
-#    types: started
+  watch:
+     types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   CONFIG_FILE: config/mine.config
   DIY_SH: diy.sh
-#  UPLOAD_BIN_DIR: false
-#  UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
 
 jobs:
