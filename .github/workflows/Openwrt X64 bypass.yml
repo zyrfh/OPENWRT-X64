@@ -1,8 +1,8 @@
 name: OpenWrt X64 bypass
   
 on:
-#  schedule:
-#   - cron: 0 22 * * *
+  schedule:
+  - cron: 0 8 * * *
   watch:
     types: started
 
