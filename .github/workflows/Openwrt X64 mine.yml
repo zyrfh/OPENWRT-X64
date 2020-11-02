@@ -47,29 +47,13 @@ jobs:
       run: |
        cd openwrt
         # luci-app-ssr-plus
-        git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
-        
-        # luci-app-passwall
-        # git clone https://github.com/esirplayground/Lienol-obsolete.git package/luci-app-passwall
-        # git clone https://github.com/hyird/pw.git -b master package/luci-app-passwall
-        
-        # adguardhome
-        svn checkout https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome package/luci-app-adg
-        
-        # OpenAppFilter
-        git clone https://github.com/destan19/OpenAppFilter package/oaf
-        
-        # smartdns
-        svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-smartdns package/luci-app-smartdns
-        
-#         # clash
-#         git clone https://github.com/vernesong/OpenClash package/clash
-
-#         # serverchan
-#         git clone https://github.com/tty228/luci-app-serverchan package/serverchan
-
-#         # koolproxyR
-#         git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
+        git clone https://github.com/fw876/helloworld.git                                                         package/luci-app-ssr-plus    
+       
+        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
+       
+        git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns
+       
+        svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns                                      package/smartdns      
        
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
