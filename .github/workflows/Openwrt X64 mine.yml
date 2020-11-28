@@ -46,9 +46,6 @@ jobs:
     - name: Download custom Packages
       run: |
        cd openwrt
-        # luci-app-ssr-plus
-        git clone https://github.com/fw876/helloworld.git                                                         package/luci-app-ssr-plus    
-       
         svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
        
         git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns
