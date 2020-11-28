@@ -42,6 +42,7 @@ jobs:
    
     - name: Add Lienol packages
       run: cd openwrt && echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default && cat feeds.conf.default
+           cd openwrt && echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall" >> feeds.conf.default && cat feeds.conf.default
 
     - name: Download custom Packages
       run: |
