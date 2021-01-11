@@ -1,4 +1,4 @@
-name: OpenWrt X64 mine
+name: OpenWrt X64 bypass
 
 on:
   schedule:
