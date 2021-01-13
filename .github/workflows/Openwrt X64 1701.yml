@@ -47,6 +47,8 @@ jobs:
        
         svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns                                      package/smartdns      
   
+        git clone https://github.com/jefferymvp/luci-app-koolproxyR                                               package/luci-app-koolproxyR
+    
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
