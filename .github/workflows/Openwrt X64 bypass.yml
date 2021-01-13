@@ -1,4 +1,4 @@
-name: OpenWrt X64 bypass
+name: OpenWrt X64 Lienol
 
 on:
   schedule:
@@ -7,9 +7,9 @@ on:
      types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: master
-  CONFIG_FILE: config/bypass.config
+  CONFIG_FILE: config/Lienol.config
   DIY_SH: diy.sh
   TZ: Asia/Shanghai
 
@@ -40,17 +40,8 @@ jobs:
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
    
     - name: Add Lienol Helloworld Passwall packages
-      run: cd openwrt && echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default && cat feeds.conf.default && echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.default && cat feeds.conf.default && echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall" >> feeds.conf.default && cat feeds.conf.default
- 
-    - name: Download custom Packages
-      run: |
-       cd openwrt
-        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
-       
-        git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns
-       
-        svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns                                      package/smartdns      
-       
+      run: cd openwrt && echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.default && cat feeds.conf.default
+           
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
