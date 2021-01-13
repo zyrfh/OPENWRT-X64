@@ -67,6 +67,7 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 V=s
+
     - name: Upload packages directory
       uses: actions/upload-artifact@master
       with:
@@ -78,6 +79,12 @@ jobs:
       with:
         name: OpenWrt_targets
         path: openwrt/bin/targets
-        
+
+    - name: Delete workflow runs 
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 30
+        keep_minimum_runs: 3
+
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=1701固件编译成功
