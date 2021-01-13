@@ -1,4 +1,4 @@
-name: OpenWrt X64 Lienol
+name: OpenWrt X64 1701
 
 on:
   schedule:
@@ -7,9 +7,9 @@ on:
      types: started
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_URL: https://github.com/coolsnowwolf/openwrt
   REPO_BRANCH: master
-  CONFIG_FILE: config/Lienol.config
+  CONFIG_FILE: config/1701.config
   DIY_SH: diy.sh
   TZ: Asia/Shanghai
 
@@ -21,19 +21,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    
-#     - name: Set Date
-#       run: |
-#          date=$(date +%Y-%m-%d)
-#          echo "::set-env name=DATE::$date"
 
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib
+        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
 
@@ -85,4 +80,4 @@ jobs:
         path: openwrt/bin/targets
         
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=X64bypass固件编译成功
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=1701固件编译成功
