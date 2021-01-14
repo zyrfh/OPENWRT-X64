@@ -8,7 +8,7 @@ on:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/openwrt
-  REPO_BRANCH: master
+  REPO_BRANCH: lede-17.01
   CONFIG_FILE: config/1701.config
   DIY_SH: diy.sh
   TZ: Asia/Shanghai
@@ -33,9 +33,7 @@ jobs:
         sudo -E apt-get -qq clean
 
     - name: Clone source code
-      run: |
-           git clone $REPO_URL -b $REPO_BRANCH openwrt
-           ln -sf /openwrt $GITHUB_WORKSPACE/openwrt 
+      run: git clone $REPO_URL -b $REPO_BRANCH openwrt
     
     - name: Add Lienol Helloworld Passwall packages
       run: cd openwrt && echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall" >> feeds.conf.default && cat feeds.conf.default           
