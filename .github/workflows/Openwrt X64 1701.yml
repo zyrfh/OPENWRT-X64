@@ -72,6 +72,10 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
         
+    - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
+
     - name: Compile the firmware
       id: compile
       run: |
@@ -96,10 +100,6 @@ jobs:
       with:
         retain_days: 30
         keep_minimum_runs: 3
-
-    - name: Check space usage
-      if: (!cancelled())
-      run: df -hT
     
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=1701固件编译成功
