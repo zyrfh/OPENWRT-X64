@@ -99,4 +99,4 @@ jobs:
         keep_minimum_runs: 3
 
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=X64mine固件编译成功
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=mine固件编译成功
