@@ -36,16 +36,19 @@ jobs:
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
    
     - name: Add Lienol Helloworld Passwall packages
-      run: cd openwrt && echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default && cat feeds.conf.default && echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.default && cat feeds.conf.default && echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall" >> feeds.conf.default && cat feeds.conf.default
+      run: |
+       cd openwrt
+        echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
+        echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.default
+        echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall" >> feeds.conf.default
+        cat feeds.conf.default
  
     - name: Download custom Packages
       run: |
        cd openwrt
         svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
-       
         git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns
-       
-        svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns                                      package/smartdns      
+        svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns                                      package/smartdns
        
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -64,7 +67,7 @@ jobs:
     - name: Download package
       id: package
       run: |
-        cd openwrt
+       cd openwrt
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
@@ -73,7 +76,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        cd openwrt
+       cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 V=s
 
