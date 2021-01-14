@@ -37,16 +37,16 @@ jobs:
     
     - name: Add Lienol Helloworld Passwall packages
       run: |
-       cd openwrt 
+       cd openwrt
         echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
         echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall" >> feeds.conf.default
-        cat feeds.conf.default           
+        cat feeds.conf.default
 
     - name: Download custom Packages
       run: |
        cd openwrt
-        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome       
-        git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns      
+        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
+        git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns
         svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns                                      package/smartdns
     
     - name: Update feeds
