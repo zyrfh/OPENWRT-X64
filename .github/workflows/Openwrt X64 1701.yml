@@ -2,7 +2,7 @@ name: OpenWrt X64 1701
 
 on:
   schedule:
-    - cron: 0 08 * * *
+    - cron: 0 4 * * *
   watch:
      types: started
 
