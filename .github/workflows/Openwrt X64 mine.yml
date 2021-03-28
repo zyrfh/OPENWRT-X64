@@ -3,7 +3,7 @@ name: OpenWrt X64 mine
 on:
   schedule:
     - cron: 0 22 * * 1
-  watch:
+#  watch:
 #      types: started
 
 env:
