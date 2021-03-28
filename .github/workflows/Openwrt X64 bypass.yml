@@ -2,7 +2,7 @@ name: OpenWrt X64 bypass
 
 on:
   schedule:
-    - cron: 0 6 * * *
+    - cron: 0 22 * * 6
   watch:
      types: started
 
@@ -96,7 +96,7 @@ jobs:
     - name: Delete workflow runs 
       uses: GitRML/delete-workflow-runs@main
       with:
-        retain_days: 7
+        retain_days: 30
         keep_minimum_runs: 3
 
     - name: WeChat notification
