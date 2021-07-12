@@ -99,5 +99,5 @@ jobs:
         retain_days: 30
         keep_minimum_runs: 3
 
-    - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=mine固件编译成功
+#   - name: WeChat notification
+#      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=mine固件编译成功
