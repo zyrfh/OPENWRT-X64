@@ -35,7 +35,7 @@ jobs:
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
    
-    - name: Add Lienol Helloworld Passwall packages
+    - name: Add feeds.conf.default
       run: |
        cd openwrt
         echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.default
@@ -47,7 +47,7 @@ jobs:
       run: |
        cd openwrt
 #        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
-#        svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-smartdns	                              package/luci-app-smartdns
+#        svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-smartdns	                             package/luci-app-smartdns
 #        svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns                                        package/smartdns
 #        git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns
 #        svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns                                      package/smartdns       
