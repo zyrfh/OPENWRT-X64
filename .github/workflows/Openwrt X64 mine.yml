@@ -45,8 +45,8 @@ jobs:
     - name: Download custom Packages
       run: |
        cd openwrt
-        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
         svn co https://github.com/zyrfh/zyrfh-package                                                             package/zyrfh-package
+#        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
 #        git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns       
 #        git clone https://github.com/pymumu/smartdns.git                                                          package/smartdns
 
