@@ -7,7 +7,7 @@ on:
      types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: master
   CONFIG_FILE: config/X64.config
   DIY_SH: diy.sh
@@ -45,7 +45,7 @@ jobs:
     - name: Download custom Packages
       run: |
        cd openwrt
-        git clone https://github.com/siropboy/sirpdboy-package                                                    package/sirpdboy-package
+#        git clone https://github.com/siropboy/sirpdboy-package                                                    package/sirpdboy-package
 #        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
 #        svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-smartdns	                             package/luci-app-smartdns
 #        svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns                                        package/smartdns
