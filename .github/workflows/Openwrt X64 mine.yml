@@ -45,10 +45,11 @@ jobs:
     - name: Download custom Packages
       run: |
        cd openwrt
-        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
+        svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome                            package/luci-app-adguardhome
         svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-smartdns	                          package/luci-app-smartdns
         svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns                                        package/smartdns
         svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-koolproxyR                             package/luci-app-koolproxyR
+#        svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome                           package/luci-app-adguardhome
 #        git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns       
 #        git clone https://github.com/pymumu/smartdns.git                                                          package/smartdns
 
