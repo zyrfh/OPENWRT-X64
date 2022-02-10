@@ -1,15 +1,15 @@
-name: OpenWrt 21.02
+name: OpenWrt N1
 
 on:
-  schedule:
-    - cron: 0 22 * * 4
-#  watch:
-#     types: started
+#  schedule:
+#    - cron: 0 22 * * 4
+  watch:
+     types: started
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: master
-  CONFIG_FILE: config/21.config
+  CONFIG_FILE: config/n1.config
   DIY_SH: diy.sh
   TZ: Asia/Shanghai
 
@@ -46,9 +46,6 @@ jobs:
       run: |
        cd openwrt
         git clone https://github.com/1wrt/luci-app-ikoolproxy.git                                                 package/luci-app-ikoolproxy
-#        git clone https://github.com/pymumu/luci-app-smartdns.git -b lede                                         package/luci-app-smartdns
-#        svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns                                      package/smartdns       
-#        git clone https://github.com/pymumu/smartdns.git                                                          package/smartdns
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -99,4 +96,4 @@ jobs:
         keep_minimum_runs: 3
 
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=Lienol21.02固件编译成功
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=N1固件编译成功
