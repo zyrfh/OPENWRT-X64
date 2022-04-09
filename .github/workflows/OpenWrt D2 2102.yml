@@ -2,7 +2,7 @@ name: OpenWrt D2 2102
 
 on:
   schedule:
-    - cron: 0 22 * * 4
+    - cron: 0 22 * * 0
   watch:
       types: started
 
