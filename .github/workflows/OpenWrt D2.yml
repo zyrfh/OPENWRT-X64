@@ -7,7 +7,7 @@ on:
       types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: git clone -b openwrt-18.06 --single-branch https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   CONFIG_FILE: config/D2.config
   DIY_SH: diy.sh
@@ -38,17 +38,17 @@ jobs:
     - name: Add feeds.conf.default
       run: |
        cd openwrt
-        echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.default
-        echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall" >> feeds.conf.default
-        cat feeds.conf.default
+#        echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.default
+#        echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall" >> feeds.conf.default
+#        cat feeds.conf.default
  
     - name: Download custom Packages
       run: |
        cd openwrt
         git clone https://github.com/1wrt/luci-app-ikoolproxy.git                       package/luci-app-ikoolproxy
-        svn co https://github.com/kenzok78/small-package/trunk/luci-app-passwall        package/luci-app-passwall
-        svn co https://github.com/kenzok78/small-package/trunk/luci-app-smartdns        package/luci-app-smartdns
-        svn co https://github.com/kenzok78/small-package/trunk/smartdns                 package/smartdns
+#        svn co https://github.com/kenzok78/small-package/trunk/luci-app-passwall        package/luci-app-passwall
+#        svn co https://github.com/kenzok78/small-package/trunk/luci-app-smartdns        package/luci-app-smartdns
+#        svn co https://github.com/kenzok78/small-package/trunk/smartdns                 package/smartdns
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
