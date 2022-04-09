@@ -1,4 +1,4 @@
-name: OpenWrt D2 1806
+name: OpenWrt D2
 
 on:
   schedule:
@@ -99,4 +99,4 @@ jobs:
         keep_minimum_runs: 3
 
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=D2-1806固件编译成功
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=D2固件编译成功
