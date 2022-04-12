@@ -46,7 +46,7 @@ jobs:
       run: |
        cd openwrt
         git clone https://github.com/1wrt/luci-app-ikoolproxy.git                       package/luci-app-ikoolproxy
-        svn co https://github.com/kenzok78/small-package/trunk/luci-app-passwall        package/luci-app-passwall
+        git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git             package/luci-app-passwall
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
