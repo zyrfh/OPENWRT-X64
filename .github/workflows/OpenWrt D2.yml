@@ -9,7 +9,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
-  CONFIG_FILE: config/D2-1806.config
+  CONFIG_FILE: config/d2.config
   DIY_SH: diy.sh
   TZ: Asia/Shanghai
 
@@ -47,6 +47,7 @@ jobs:
        cd openwrt
         git clone https://github.com/1wrt/luci-app-ikoolproxy.git                       package/luci-app-ikoolproxy
         svn co https://github.com/kenzok78/small-package/trunk/luci-app-adguardhome     package/luci-app-adguardhome
+        svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-pptp-server     package/luci-app-pptp-server
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
