@@ -97,4 +97,4 @@ jobs:
         keep_minimum_runs: 3
 
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=Lienol n1固件编译成功
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=n1固件编译成功
